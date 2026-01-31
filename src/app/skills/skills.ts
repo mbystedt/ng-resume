@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, signal } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -34,7 +34,7 @@ echarts.use([TreeChart, GridComponent, TooltipComponent, CanvasRenderer]);
   providers: [provideEchartsCore({ echarts })],
 })
 export class Skills implements OnInit {
-  public filter = '';
+  public filter = signal('');
   public displayedColumns: string[] = ['star', 'name', 'experience'];
 
   @ViewChild(MatPaginator) public paginator!: MatPaginator;
@@ -60,7 +60,7 @@ export class Skills implements OnInit {
   }
 
   public setFilter(filter: string): void {
-    this.filter = filter;
+    this.filter.set(filter);
     this.dataSource.filter = filter.toLowerCase();
   }
 
