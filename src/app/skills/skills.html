@@ -3,7 +3,7 @@
 
   <div class="competencies">
     <mat-form-field>
-      <input matInput placeholder="Filter Skills" [ngModel]="filter"
+      <input matInput placeholder="Filter Skills" [ngModel]="filter()"
         (input)="setFilter($event.target.value)">
     </mat-form-field>
     <button mat-raised-button (click)="setFilter('')">Clear</button>

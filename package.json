@@ -40,8 +40,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "ngx-echarts": "^21.0.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular/build": "^21.1.2",
